@@ -68,13 +68,13 @@ public class UserService {
     }
 
     public void deleteUser(UUID id){
-        Optional<User> userToDelete = userRepository.findById(id);
+        Boolean userExists = userRepository.existsById(id);
 
-        if(userToDelete.isEmpty()){
+        if(!userExists){
             throw new ResourceNotFoundException("User not found!");
         }
 
-        userRepository.delete(userToDelete.get());
+        userRepository.deleteById(id);
     }
 
     public void validateEmail(UpdateUserDto user, UUID currentUserId){
