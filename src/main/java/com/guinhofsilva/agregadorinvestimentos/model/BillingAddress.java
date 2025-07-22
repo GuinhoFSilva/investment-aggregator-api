@@ -1,6 +1,8 @@
 package com.guinhofsilva.agregadorinvestimentos.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,16 +10,17 @@ import lombok.Setter;
 import java.util.UUID;
 
 @Entity
-@Table(name = "tb_billing_adress")
+@Table(name = "tb_billing_address")
 @Getter
 @Setter
-public class BillingAdress {
+public class BillingAddress {
     @Id
     @Column(name = "account_id")
     private UUID account_id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id")
+    @JsonBackReference
     @MapsId
     private Account account;
 
@@ -25,10 +28,10 @@ public class BillingAdress {
 
     private Integer number;
 
-    public BillingAdress(){}
+    public BillingAddress(){}
 
-    public BillingAdress(UUID account_id, String street, Integer number) {
-        this.account_id = account_id;
+    public BillingAddress(Account account, String street, Integer number) {
+        this.account = account;
         this.street = street;
         this.number = number;
     }

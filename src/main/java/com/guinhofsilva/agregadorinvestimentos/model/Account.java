@@ -1,8 +1,8 @@
 package com.guinhofsilva.agregadorinvestimentos.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import jdk.dynalink.linker.LinkerServices;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,13 +18,15 @@ import java.util.UUID;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "account_id")
     private UUID account_id;
 
     private String description;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private BillingAdress billingAdress;
+    @JsonManagedReference
+    private BillingAddress billingAdress;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -39,7 +41,7 @@ public class Account {
 
     public Account(){}
 
-    public Account(UUID account_id, String description, BillingAdress billingAdress, User user, Instant createdAt, List<AccountStock> accountStocks) {
+    public Account(UUID account_id, String description, BillingAddress billingAdress, User user, Instant createdAt, List<AccountStock> accountStocks) {
         this.account_id = account_id;
         this.description = description;
         this.billingAdress = billingAdress;
