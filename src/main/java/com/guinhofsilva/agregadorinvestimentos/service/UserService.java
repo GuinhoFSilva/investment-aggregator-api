@@ -1,5 +1,6 @@
 package com.guinhofsilva.agregadorinvestimentos.service;
 
+import com.guinhofsilva.agregadorinvestimentos.Dto.AccountResponseDto;
 import com.guinhofsilva.agregadorinvestimentos.Dto.CreateAccountDto;
 import com.guinhofsilva.agregadorinvestimentos.Dto.CreateUserDto;
 import com.guinhofsilva.agregadorinvestimentos.Dto.UpdateUserDto;
@@ -108,7 +109,7 @@ public class UserService {
         return accountRepository.save(account);
     }
 
-    public List<Account> getAllAccountsFromUser(UUID userId){
+        public List<AccountResponseDto> getAllAccountsFromUser(UUID userId){
         Optional<User> optUser = userRepository.findById(userId);
         if(optUser.isEmpty()){
             throw new ResourceNotFoundException("User not found!");
@@ -116,7 +117,13 @@ public class UserService {
 
         User user = optUser.get();
 
-        return accountRepository.findAllByUser(user);
+        List<Account> accounts = accountRepository.findAllByUser(user);
+
+
+        return accounts.stream()
+                .map(ac -> new AccountResponseDto(ac.getAccount_id(), ac.getDescription()))
+                .toList();
+
     }
 
     public void validateEmail(UpdateUserDto user, UUID currentUserId) {

@@ -1,9 +1,13 @@
 package com.guinhofsilva.agregadorinvestimentos.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_accounts_stocks")
+@Getter
+@Setter
 public class AccountStock {
     @EmbeddedId
     private AccountStockId id;

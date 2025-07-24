@@ -1,5 +1,6 @@
 package com.guinhofsilva.agregadorinvestimentos.controller;
 
+import com.guinhofsilva.agregadorinvestimentos.Dto.AccountResponseDto;
 import com.guinhofsilva.agregadorinvestimentos.Dto.CreateAccountDto;
 import com.guinhofsilva.agregadorinvestimentos.Dto.CreateUserDto;
 import com.guinhofsilva.agregadorinvestimentos.Dto.UpdateUserDto;
@@ -59,7 +60,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}/accounts")
-    public ResponseEntity<List<Account>> getAllAccountsFromUser(@PathVariable UUID userId) {
+    public ResponseEntity<List<AccountResponseDto>> getAllAccountsFromUser(@PathVariable UUID userId) {
         return ResponseEntity.ok(userService.getAllAccountsFromUser(userId));
     }
 
