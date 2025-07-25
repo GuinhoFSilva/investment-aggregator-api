@@ -21,12 +21,13 @@ public class AccountController {
     }
 
     @PostMapping("/{accountId}/stocks")
-    public ResponseEntity<Void> associateStock(@PathVariable UUID accountId, @RequestBody AssociateAccountStockDto dto){
+    public ResponseEntity<Void> associateStock(@PathVariable UUID accountId, @RequestBody AssociateAccountStockDto dto) {
+        accountService.associateStock(accountId, dto);
         return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{accountId}/stocks")
-    public ResponseEntity<List<AccountStockResponseDto>> findAllStocks(@PathVariable UUID accountId){
+    public ResponseEntity<List<AccountStockResponseDto>> findAllStocks(@PathVariable UUID accountId) {
         return ResponseEntity.ok(accountService.findAllStocks(accountId));
     }
 
