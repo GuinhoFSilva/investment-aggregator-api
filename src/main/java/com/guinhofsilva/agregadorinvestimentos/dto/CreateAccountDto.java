@@ -1,4 +1,4 @@
-package com.guinhofsilva.agregadorinvestimentos.Dto;
+package com.guinhofsilva.agregadorinvestimentos.dto;
 
 public record CreateAccountDto(String description, String street, Integer number) {
 }

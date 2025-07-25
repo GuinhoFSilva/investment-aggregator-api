@@ -1,6 +1,6 @@
 package com.guinhofsilva.agregadorinvestimentos.service;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateStockDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateStockDto;
 import com.guinhofsilva.agregadorinvestimentos.exceptions.ResourceNotFoundException;
 import com.guinhofsilva.agregadorinvestimentos.mapper.StockMapper;
 import com.guinhofsilva.agregadorinvestimentos.model.Stock;

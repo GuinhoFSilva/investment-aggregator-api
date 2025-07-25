@@ -34,7 +34,7 @@ public class User {
     private Instant updatedAt;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonManagedReference("user_accounts")
     private List<Account> accounts;
 
     public User(){}

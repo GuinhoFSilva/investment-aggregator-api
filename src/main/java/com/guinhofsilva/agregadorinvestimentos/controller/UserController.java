@@ -1,20 +1,17 @@
 package com.guinhofsilva.agregadorinvestimentos.controller;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.AccountResponseDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateAccountDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateUserDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.UpdateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.AccountResponseDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateAccountDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.UpdateUserDto;
 import com.guinhofsilva.agregadorinvestimentos.model.Account;
 import com.guinhofsilva.agregadorinvestimentos.model.User;
 import com.guinhofsilva.agregadorinvestimentos.service.UserService;
-import org.apache.coyote.Response;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController

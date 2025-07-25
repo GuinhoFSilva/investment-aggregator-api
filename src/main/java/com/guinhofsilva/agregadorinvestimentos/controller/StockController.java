@@ -1,6 +1,6 @@
 package com.guinhofsilva.agregadorinvestimentos.controller;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateStockDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateStockDto;
 import com.guinhofsilva.agregadorinvestimentos.model.Stock;
 import com.guinhofsilva.agregadorinvestimentos.service.StockService;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,4 @@
-package com.guinhofsilva.agregadorinvestimentos.Dto;
-
-import java.util.UUID;
+package com.guinhofsilva.agregadorinvestimentos.dto;
 
 public record CreateUserDto(String username, String email, String password) {
 }

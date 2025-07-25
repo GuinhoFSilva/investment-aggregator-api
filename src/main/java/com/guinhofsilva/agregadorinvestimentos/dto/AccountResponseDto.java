@@ -1,4 +1,4 @@
-package com.guinhofsilva.agregadorinvestimentos.Dto;
+package com.guinhofsilva.agregadorinvestimentos.dto;
 
 import java.util.UUID;
 

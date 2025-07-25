@@ -1,6 +1,6 @@
 package com.guinhofsilva.agregadorinvestimentos.mapper;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateStockDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateStockDto;
 import com.guinhofsilva.agregadorinvestimentos.model.Stock;
 
 public class StockMapper {

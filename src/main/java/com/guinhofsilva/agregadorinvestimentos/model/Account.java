@@ -30,7 +30,7 @@ public class Account {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    @JsonBackReference
+    @JsonBackReference("user_accounts")
     private User user;
 
     @CreationTimestamp

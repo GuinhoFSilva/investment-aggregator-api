@@ -1,9 +1,9 @@
 package com.guinhofsilva.agregadorinvestimentos.service;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.AccountResponseDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateAccountDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateUserDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.UpdateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.AccountResponseDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateAccountDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.UpdateUserDto;
 import com.guinhofsilva.agregadorinvestimentos.exceptions.EmailAlreadyUsedException;
 import com.guinhofsilva.agregadorinvestimentos.exceptions.EmptyRequestBodyException;
 import com.guinhofsilva.agregadorinvestimentos.exceptions.ResourceNotFoundException;
@@ -16,11 +16,8 @@ import com.guinhofsilva.agregadorinvestimentos.model.User;
 import com.guinhofsilva.agregadorinvestimentos.repository.AccountRepository;
 import com.guinhofsilva.agregadorinvestimentos.repository.BillingAddressRepository;
 import com.guinhofsilva.agregadorinvestimentos.repository.UserRepository;
-import jakarta.persistence.EntityExistsException;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

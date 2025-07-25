@@ -1,7 +1,7 @@
 package com.guinhofsilva.agregadorinvestimentos.service;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateUserDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.UpdateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.UpdateUserDto;
 import com.guinhofsilva.agregadorinvestimentos.exceptions.EmailAlreadyUsedException;
 import com.guinhofsilva.agregadorinvestimentos.exceptions.EmptyRequestBodyException;
 import com.guinhofsilva.agregadorinvestimentos.exceptions.ResourceNotFoundException;

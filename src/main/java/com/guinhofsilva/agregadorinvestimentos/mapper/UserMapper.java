@@ -1,11 +1,10 @@
 package com.guinhofsilva.agregadorinvestimentos.mapper;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.CreateUserDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.UpdateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.CreateUserDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.UpdateUserDto;
 import com.guinhofsilva.agregadorinvestimentos.model.User;
 
 import java.time.Instant;
-import java.util.UUID;
 
 public class UserMapper {
     public static User createUserMapper(CreateUserDto userDto) {

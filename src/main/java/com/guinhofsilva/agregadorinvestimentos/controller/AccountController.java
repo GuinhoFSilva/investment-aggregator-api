@@ -1,10 +1,8 @@
 package com.guinhofsilva.agregadorinvestimentos.controller;
 
-import com.guinhofsilva.agregadorinvestimentos.Dto.AccountStockResponseDto;
-import com.guinhofsilva.agregadorinvestimentos.Dto.AssociateAccountStockDto;
-import com.guinhofsilva.agregadorinvestimentos.model.AccountStock;
+import com.guinhofsilva.agregadorinvestimentos.dto.AccountStockResponseDto;
+import com.guinhofsilva.agregadorinvestimentos.dto.AssociateAccountStockDto;
 import com.guinhofsilva.agregadorinvestimentos.service.AccountService;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,9 +19,8 @@ public class AccountController {
     }
 
     @PostMapping("/{accountId}/stocks")
-    public ResponseEntity<Void> associateStock(@PathVariable UUID accountId, @RequestBody AssociateAccountStockDto dto) {
-        accountService.associateStock(accountId, dto);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<AccountStockResponseDto> associateStock(@PathVariable UUID accountId, @RequestBody AssociateAccountStockDto dto) {
+        return ResponseEntity.ok(accountService.associateStock(accountId, dto));
     }
 
     @GetMapping("/{accountId}/stocks")
